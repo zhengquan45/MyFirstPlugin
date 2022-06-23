@@ -6,13 +6,16 @@
 
     <depends>com.intellij.modules.platform</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.zhengquan45.myfirstplugin.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.zhengquan45.myfirstplugin.services.MyProjectService"/>
-    </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.zhengquan45.myfirstplugin.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    <actions>
+        <action id="AddNewReleaseInChangeLog" class="com.github.zhengquan45.myfirstplugin.AddNewReleaseInChangeLogAction"
+                text="AddNewReleaseInChangeLog" description="AddNewReleaseInChangeLog">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+    </actions>
+
+<!--    <extensions defaultExtensionNs="com.intellij">-->
+<!--        <applicationService serviceImplementation="com.github.zhengquan45.myfirstplugin.IdeaApp"/>-->
+<!--        <projectService serviceImplementation="com.github.zhengquan45.myfirstplugin.impl.IdeaAppImpl"/>-->
+<!--    </extensions>-->
 </idea-plugin>
